@@ -1,0 +1,6 @@
+id,section,subsection,group,title,desc,tip,url,sort_order,active,collapsed_default,highlight
+link-1,gdrive,Подразделения,,Главная папка отдела,Архив документов,Спросите доступ у куратора,#,1,TRUE,FALSE,FALSE
+link-2,gdrive,Объекты,,Объект А,Рабочая документация,,#,2,TRUE,FALSE,TRUE
+link-3,services,,,Корпоративный портал,Вход через SSO,,#,1,TRUE,FALSE,FALSE
+link-4,reports,,,Протоколы совещаний,Последние 12 мес.,,,#,1,TRUE,FALSE,FALSE
+link-5,departments,,Стандарты,Регламент ДРП,,,#,1,TRUE,TRUE,FALSE

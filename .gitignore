@@ -1,0 +1,7 @@
+.firebase-sa-key.json
+oauth-config.json
+.firebase/
+__pycache__/
+*.pyc
+.DS_Store
+firebase-public/
