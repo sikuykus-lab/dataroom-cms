@@ -5,7 +5,7 @@
  */
 var FB_SITE = "YOUR_FIREBASE_PROJECT_ID";
 var FB_HOST = "https://firebasehosting.googleapis.com/v1beta1";
-var FB_SA_FILE_ID_FALLBACK = "1dDw6SKHzdv52ugGTmQBoPmfwalyWanQW";
+var FB_SA_FILE_ID_FALLBACK = "";
 
 function getFirebaseSaFileId_() {
   if (typeof readConfigFileId_ === "function") {
