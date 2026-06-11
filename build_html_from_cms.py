@@ -221,14 +221,12 @@ def render_section_links(links: list[dict], esc) -> str:
     html = ""
     for sub in sub_order:
         items = by_sub[sub]
-        use_details = items[0]["collapsed"] or len(items) > 6
-        if use_details:
-            html += (
-                f'<details><summary data-count="{len(items)}">{esc(sub)}</summary>'
-                f'<div class="rows">{render_items(items, esc)}</div></details>'
-            )
-        else:
-            html += f'<div class="sub">{esc(sub)}</div><div class="rows">{render_items(items, esc)}</div>'
+        start_closed = any(l["collapsed"] for l in items)
+        open_attr = "" if start_closed else " open"
+        html += (
+            f'<details{open_attr}><summary data-count="{len(items)}">{esc(sub)}</summary>'
+            f'<div class="rows">{render_items(items, esc)}</div></details>'
+        )
     return html
 
 

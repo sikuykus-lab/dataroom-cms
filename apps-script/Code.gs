@@ -283,21 +283,19 @@ function renderSectionLinks_(links, esc) {
   var html = "";
   subOrder.forEach(function (sub) {
     var items = bySub[sub];
-    var useDetails = items[0].collapsed || items.length > 6;
-    if (useDetails) {
-      html +=
-        "<details><summary data-count=\"" +
-        items.length +
-        "\">" +
-        esc(sub) +
-        "</summary><div class=\"rows\">";
-      html += renderItems_(items, esc);
-      html += "</div></details>";
-    } else {
-      html += '<div class="sub">' + esc(sub) + '</div><div class="rows">';
-      html += renderItems_(items, esc);
-      html += "</div>";
-    }
+    var startClosed = items.some(function (l) {
+      return l.collapsed;
+    });
+    html +=
+      "<details" +
+      (startClosed ? "" : " open") +
+      "><summary data-count=\"" +
+      items.length +
+      "\">" +
+      esc(sub) +
+      "</summary><div class=\"rows\">";
+    html += renderItems_(items, esc);
+    html += "</div></details>";
   });
   return html;
 }
